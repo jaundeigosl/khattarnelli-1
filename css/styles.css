@@ -361,6 +361,7 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border-radius: 1em;
 }
 
 .product-image img{
@@ -389,6 +390,7 @@ header {
     font-weight: bold;
     color: var(--secondary-color);
     margin: 15px 0;
+    text-align: center;
 }
 
 .product-info .btn {
@@ -830,6 +832,7 @@ button:focus,
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    margin-top: 80px;
 }
 
 .products-images {
@@ -876,14 +879,18 @@ button:focus,
 }
 
 .stacked-image.back-image.image-2 {
-    top: 15%;
-    left: 15%;
-    transform: rotate(3deg);
+    top: -5%;
+    left: 45%;
 }
 
 .stacked-image.back-image.image-3 {
     top: 45%;
     left: 45%;
+}
+
+.stacked-image.back-image.image-4 {
+    top: 45%;
+    left: -5%;
 }
 
 .stacked-image img {
@@ -917,6 +924,7 @@ button:focus,
     color: var(--primary-color);
     margin-bottom: 20px;
     font-weight: 600;
+    text-align: center;
 }
 
 .product-description {
@@ -947,12 +955,14 @@ button:focus,
     font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .product-actions {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-outline {
@@ -972,11 +982,15 @@ button:focus,
 }
 
 .image-stack:hover .back-image.image-2 {
-    transform: rotate(6deg) translateY(-5px);
+    transform: rotate(8deg) translateX(220px);
 }
 
 .image-stack:hover .back-image.image-3 {
     transform: rotate(8deg) translateX(220px);
+}
+
+.image-stack:hover .back-image.image-4 {
+    transform: rotate(-8deg) translateX(-200px);
 }
 
 /* Responsive para la nueva estructura */
@@ -1039,5 +1053,202 @@ button:focus,
     
     .product-price {
         font-size: 1.6rem;
+        text-align: center;
+    }
+}
+
+/* Carrusel de Productos */
+.products-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto 50px;
+    padding: 0 50px;
+}
+
+.carousel-container {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+.carousel-slide {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: 0;
+}
+
+.carousel-product {
+    background: var(--light-color);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.carousel-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-product .product-image {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.carousel-product .placeholder-image {
+    width: 80px;
+    height: 80px;
+    background: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-color);
+}
+
+.carousel-product h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.carousel-product .price {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Controles del Carrusel */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    pointer-events: all;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.carousel-btn:hover svg path {
+    stroke: var(--white);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Puntos de navegación */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(139, 69, 19, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Responsive para el carrusel */
+@media (max-width: 992px) {
+    .carousel-slide {
+        flex: 0 0 calc(50% - 10px);
+    }
+    
+    .products-carousel {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex: 0 0 100%;
+    }
+    
+    .products-carousel {
+        padding: 0 30px;
+        margin: 30px auto 40px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-product {
+        padding: 20px;
+    }
+    
+    .carousel-product .product-image {
+        height: 100px;
+    }
+    
+    .carousel-product .placeholder-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-carousel {
+        padding: 0 20px;
+    }
+    
+    .carousel-controls {
+        display: none;
+    }
+    
+    .carousel-dots {
+        margin-top: 20px;
     }
 }
