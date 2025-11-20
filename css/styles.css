@@ -10,7 +10,8 @@
     --beige: #F5F5DC;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
-    --font-primary: ' Arial Italic', sans-serif;
+    --font-primary: Arial;
+    --font-style:italic;
 }
 
 /* Reset y estilos base */
@@ -22,6 +23,7 @@
 
 body {
     font-family: var(--font-primary);;
+    font-style: italic;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
