@@ -2,7 +2,7 @@
 :root {
     --primary-color: rgba(12, 88, 29, 0.9);
     --secondary-color:  rgba(97, 156, 82, 0.8);
-    --accent-color: #FFD700;
+    --accent-color: black;
     --light-color: black;
     --dark-color: #3E2723;
     --text-color: white;
@@ -62,7 +62,8 @@ ul {
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+    background-color: white;
+    color:black;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
 }
@@ -447,8 +448,8 @@ header {
 }
 
 .cta-section .btn:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-color);
+    background-color:black;
+    color: white;
 }
 
 /* Footer */
@@ -521,7 +522,7 @@ footer {
 }
 
 .social-link:hover {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     transform: translateY(-3px);
 }
 
@@ -1125,7 +1126,7 @@ button:focus,
 }
 
 .carousel-product .price {
-    color: var(--secondary-color);
+    color: black;
     font-size: 1.3rem;
     font-weight: 700;
     margin: 0;
@@ -1156,6 +1157,8 @@ button:focus,
     transition: var(--transition);
     pointer-events: all;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .carousel-btn:hover {
