@@ -1,0 +1,40 @@
+<?php
+
+function isActive($link_path, $current_uri) {
+
+    if($link_path === $current_uri){
+        return "active";
+    }
+
+    return '';
+}
+
+// **Nota:** Asume que la constante BASE_URL ya está definida.
+
+?>
+
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="<?php echo BASE_URL; ?>images/logo/ChatGPT Image 19 nov 2025, 13_26_41.png" alt="Kattarnelly logo">
+            </div>
+            <ul class="nav-links">
+
+                <?php $home_link = BASE_URL . 'index.php'; ?>
+                <?php $actual_uri = $_SERVER['REQUEST_URI']; ?>
+
+                <li><a href="<?php echo $home_link; ?>" class="<?php echo isActive($home_link, $actual_uri); ?>">Inicio</a></li>
+                
+                <?php $productos_link = BASE_URL . 'pages/productos/productos.php'; ?>
+                <li><a href="<?php echo $productos_link; ?>" class="<?php echo isActive($productos_link, $actual_uri); ?>">Productos</a></li>
+                
+                <?php $nosotros_link = BASE_URL . 'pages/nosotros/nosotros.php'; ?>
+                <li><a href="<?php echo $nosotros_link; ?>" class="<?php echo isActive($nosotros_link, $actual_uri); ?>">Nosotros</a></li>
+                
+                <li><a href="">Preparación</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+            </nav>
+    </div>
+</header>

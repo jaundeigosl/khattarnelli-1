@@ -1,0 +1,12 @@
+<?php define("BASE_URL", "/khatrarnelli/khattarnelli-1/"); ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khattarnelli - Café con Especias Ayurvédicas</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
