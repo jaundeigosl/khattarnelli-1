@@ -31,9 +31,12 @@ function isActive($link_path, $current_uri) {
                 
                 <?php $nosotros_link = BASE_URL . 'pages/nosotros/nosotros.php'; ?>
                 <li><a href="<?php echo $nosotros_link; ?>" class="<?php echo isActive($nosotros_link, $actual_uri); ?>">Nosotros</a></li>
-                
-                <li><a href="">Preparación</a></li>
-                <li><a href="">Contacto</a></li>
+
+                <?php $preparacion_link = BASE_URL . 'pages/preparacion/preparacion.php'; ?>
+                <li><a href="<?php echo $preparacion_link; ?>" class="<?php echo isActive($preparacion_link, $actual_uri); ?>">Preparación</a></li>
+
+                <?php $contacto_link = BASE_URL . 'pages/contacto/contacto.php' ?>
+                <li><a href="<?php echo $contacto_link; ?>" class="<?php echo isActive($contacto_link, $actual_uri); ?>">Contacto</a></li>
             </ul>
             </nav>
     </div>

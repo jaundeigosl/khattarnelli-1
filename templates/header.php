@@ -1,4 +1,3 @@
-<?php define("BASE_URL", "/khatrarnelli/khattarnelli-1/"); ?>
 
 <!DOCTYPE html>
 <html lang="es">

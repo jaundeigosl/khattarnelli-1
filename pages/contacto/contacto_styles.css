@@ -1,0 +1,191 @@
+/* -------------------------------------- */
+/* Estilos para la Sección Contacto */
+/* -------------------------------------- */
+
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--light-color); /* Fondo oscuro */
+    color: var(--text-color);
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Una columna más pequeña para contacto, una más grande para FAQ */
+    gap: 40px;
+}
+
+.contact-info,
+.faq-info {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-box {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color:  rgba(97, 156, 82, 0.2);; /* Fondo ligeramente diferente para destacar */
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3,
+.faq-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+/* --- Estilos de Pedidos (Slogan y Botón) --- */
+.orders-info {
+    text-align: center;
+}
+
+.orders-info .slogan {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.primary-btn { /* Botón de compra */
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Detalles de Contacto --- */
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    gap:30px;
+}
+
+
+.contact-detail .label {
+    font-weight: bold;
+    margin-right: 5px;
+    white-space: nowrap; /* Evita que el label se rompa */
+}
+
+.contact-detail .value {
+    word-wrap: break-word;
+    flex-grow: 1;
+}
+
+/* --- Redes Sociales --- */
+
+.social-icon {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.social-icon i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.social-icon.facebook:hover {
+    background-color: #3b5998;
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+
+/* --- Columna de Preguntas Frecuentes (FAQ) --- */
+
+.faq-info {
+    background-color: var(--white); /* Fondo claro para contraste */
+    color: black; /* Texto negro sobre fondo blanco */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.faq-info h3 {
+    color: var(--accent-color); /* Título en negro */
+    border-color: var(--accent-color);
+}
+
+.faq-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+/* Estilos de la tabla de envíos */
+.shipping-table {
+    margin: 20px 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.shipping-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.shipping-row.header {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    color: black;
+    border-top: 1px solid #ccc;
+}
+
+.shipping-row .cost {
+    font-weight: bold;
+    text-align: right;
+}
+
+.shipping-row.free .cost {
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.note {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #555;
+}
+
+.warning {
+    color: #cc0000;
+    font-weight: 500;
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+    .contact-layout {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos pequeños */
+    }
+
+    .contact-info,
+    .faq-info {
+        min-width: 100%;
+    }
+}

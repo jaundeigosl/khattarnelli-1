@@ -1,0 +1,74 @@
+/* -------------------------------------- */
+/* Estilos para la Sección Términos del Servicio */
+/* -------------------------------------- */
+
+.terms-section {
+    padding: 80px 0;
+    /* Usaremos el fondo blanco para que el texto legal sea legible */
+    background-color: var(--white); 
+    color: black; 
+}
+
+.terms-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.terms-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.terms-section-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    background-color: #f7f7f7; /* Fondo muy ligero para separar bloques */
+    border-radius: 5px;
+}
+
+.terms-section-block h3 {
+    color: var(--accent-color); /* Negro */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.terms-section-block h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.terms-section-block p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* Estilos específicos para el bloque de contacto */
+.terms-section-block.contact-block {
+    border-left: 5px solid var(--secondary-color);
+    background-color: #f0fff0; /* Fondo más claro o temático */
+}
+
+.terms-section-block.contact-block a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Responsive (Ajustes mínimos ya que es texto) */
+@media (max-width: 768px) {
+    .terms-section-block {
+        padding: 15px;
+    }
+}

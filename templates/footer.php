@@ -12,18 +12,18 @@
                 <div class="footer-links">
                     <h3>Enlaces rápidos</h3>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="">Productos</a></li>
-                        <li><a href="">Nosotros</a></li>
-                        <li><a href="">Preparación</a></li>
-                        <li><a href="">Contacto</a></li>
+                        <li><a href="<?php echo BASE_URL?>index.html">Inicio</a></li>
+                        <li><a href="<?php echo BASE_URL?>pages/productos/productos.php">Productos</a></li>
+                        <li><a href="<?php echo BASE_URL?>pages/nosotros/nostros.php">Nosotros</a></li>
+                        <li><a href="<?php echo BASE_URL?>pages/preparacion/preparacion.php">Preparación</a></li>
+                        <li><a href="<?php echo BASE_URL?>pages/contacto/contacto.php">Contacto</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <ul>
-                        <li><a href="">Preguntas Frecuentes</a></li>
-                        <li><a href="">Terminos del Servicio</a></li>
+                        <li><a href="<?php echo BASE_URL;?>pages/preguntas_frecuentes/preguntas_frecuentes.php">Preguntas Frecuentes</a></li>
+                        <li><a href="<?php echo BASE_URL;?>pages/terminos_del_servicio/terminos_del_servicio.php">Terminos del Servicio</a></li>
                     </ul>
                 </div>
                 

@@ -1,0 +1,119 @@
+/* -------------------------------------- */
+/* Estilos para la Sección Preparación */
+/* -------------------------------------- */
+
+.preparation-guide {
+    padding: 60px 0;
+    /* Si deseas un fondo diferente al del body, ajusta aquí */
+    background-color: var(--light-color); 
+    color: var(--text-color);
+}
+
+.preparation-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.preparation-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Espacio entre las dos columnas */
+}
+
+/* --- Columna de Pasos --- */
+
+.preparation-steps,
+.recommendations {
+    flex: 1; /* Ocupa el mismo ancho */
+    min-width: 300px; /* Asegura que no se colapse demasiado */
+}
+
+.preparation-steps h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.steps-list {
+    counter-reset: step-counter; /* Inicializa el contador para los números */
+    list-style: none; /* Quitamos la numeración por defecto */
+    padding: 0;
+}
+
+.steps-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-left: 50px; /* Espacio para el círculo de número */
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--primary-color); /* Círculo verde */
+    color: var(--white);
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+
+.steps-list li p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* --- Columna de Recomendaciones --- */
+
+.recommendations h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.recommendation-box {
+    background-color: rgba(97, 156, 82, 0.2); /* Un color que contraste con el fondo, ej. un marrón oscuro */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.recommendation-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.ideal-for {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(97, 156, 82, 0.2); /* Un fondo muy ligero para destacar */
+    border-radius: 5px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 768px) {
+    .preparation-content {
+        flex-direction: column;
+    }
+
+    .preparation-steps,
+    .recommendations {
+        min-width: 100%;
+    }
+}

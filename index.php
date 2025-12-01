@@ -1,3 +1,5 @@
+<?php include "paths.php"?>
+
 <?php include "templates/header.php"; ?>
 
 <?php include "components/nav.php"; ?>

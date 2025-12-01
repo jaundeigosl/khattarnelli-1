@@ -1,0 +1,92 @@
+/* ---------------------------------------------------- */
+/* Estilos Específicos para la Sección Nosotros (#nosotros) */
+/* ---------------------------------------------------- */
+
+/* --- Primera Columna de Información (Fondo Oscuro) --- */
+
+/* Estilo para los H4 de "Nuestra Filosofía" y "Promesa" */
+#nosotros .product-details h4 {
+    color: var(--white);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Promesa de la Marca H4 */
+#nosotros .product-features h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Texto de las características de la Promesa (Natural, Auténtico, Saludable) */
+#nosotros .product-features .feature span {
+    color: white; 
+}
+
+#nosotros .about-details-box .product-features .feature span {
+    color: black; 
+}
+
+
+/* --- Estilos de la Segunda Sección (Fondo Blanco) --- */
+
+/* Clase dedicada para el segundo bloque de información que tiene fondo blanco */
+.about-details-box {
+    margin-top: 80px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    color: black; /* Aplicar color negro por defecto a todo el contenido del bloque */
+}
+
+/* Asegurar que todos los párrafos y headings sean negros dentro del bloque blanco */
+.about-details-box p,
+.about-details-box .products-info,
+.about-details-box ul {
+    color: black;
+}
+
+/* Títulos H3 de "Diferentes" e "Ingredientes" */
+.about-details-box h3 {
+    color: black;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 2rem;
+}
+
+/* Párrafo: "Especias ayurvédicas tradicionales:" (Itálicas) */
+.about-details-box .product-features p:first-of-type { 
+    font-style: italic;
+}
+
+/* Lista de ingredientes */
+.about-details-box ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+/* Título ¡Libre de! */
+.about-details-box .product-features h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Texto de "Sin..." y párrafo final */
+.about-details-box .feature span {
+    color: black;
+}
+.about-details-box .product-features p:last-child {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+#founder-image{
+    width:auto;
+    height: 100%;
+    box-shadow: 0 2px 20px rgba(12, 88, 29, 0.9);
+}
+
+#last-message{
+    color:var(--primary-color);
+    font-weight: 600;
+}

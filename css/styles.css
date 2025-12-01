@@ -46,6 +46,10 @@ ul {
     padding: 0 15px;
 }
 
+strong{
+    color:var(--primary-color);
+}
+
 .btn {
     display: inline-block;
     padding: 14px 28px;
@@ -488,7 +492,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .contact-item {

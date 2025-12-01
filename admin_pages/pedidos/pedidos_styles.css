@@ -1,0 +1,178 @@
+/* --- Estilos Adicionales para el Dashboard de Órdenes --- */
+/* --- Globales y Layout --- */
+body {
+    font-family: Arial;;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: black; 
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-actions {
+    /* Contenedor para alinear los botones del encabezado (Órdenes y Logout) */
+    display: flex; 
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* --- Nuevo estilo para el botón de Ver Órdenes en el encabezado --- */
+.btn-header {
+    background-color: #f1c40f; /* Amarillo o color de énfasis */
+    color: #333;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-header:hover {
+    background-color: #e9b900;
+}
+
+.container {
+    padding: 30px;
+}
+
+/* --- Encabezado del Dashboard --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8em;
+}
+
+/* --- Estilos de la Tabla --- */
+.productos-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.productos-table th,
+.productos-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.productos-table th {
+    background-color: #f8f8f8;
+    color: #4a4a4a;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.productos-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- Botones Generales y de Logout --- */
+.btn {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    margin-right: 5px; /* Espacio entre botones */
+    display: inline-block;
+}
+
+.btn-primary { /* Botón de Crear Producto */
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e7e34;
+}
+
+.btn-logout {
+    background-color: #e74c3c; /* Rojo oscuro */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+/* --- Botones CRUD Específicos --- */
+.crud-actions {
+    min-width: 180px; /* Asegura espacio para los 3 botones */
+}
+
+.btn-read { /* VER */
+    background-color: #3498db; /* Azul */
+    color: white;
+}
+.btn-read:hover { background-color: #2980b9; }
+
+.btn-update { /* EDITAR */
+    background-color: #f39c12; /* Naranja */
+    color: white;
+}
+.btn-update:hover { background-color: #e67e22; }
+
+.btn-delete { /* ELIMINAR */
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+}
+.btn-delete:hover { background-color: #c0392b; } 
+/* Estilo para el botón de regreso (Productos) en el encabezado */
+.btn-back {
+    background-color: #5d6d7e; /* Gris/Azul */
+}
+
+.btn-back:hover {
+    background-color: #4a596a;
+}
+
+/* Base para el indicador de estado */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Colores según el estado de la orden */
+.status-pending { /* Pendiente / Procesando */
+    background-color: #f39c12; /* Naranja */
+}
+
+.status-completed { /* Completada / Enviada */
+    background-color: #28a745; /* Verde */
+}
+
+.status-cancelled { /* Cancelada */
+    background-color: #e74c3c; /* Rojo */
+}
+
+/* Para botones de acción deshabilitados (como Cancelar una orden completada) */
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
