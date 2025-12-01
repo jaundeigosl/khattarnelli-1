@@ -1,6 +1,6 @@
 /* --- Globales y Layout --- */
 body {
-    font-family: Arial;;
+    font-family: Arial;
     background-color: #eef2f7;
     margin: 0;
     padding: 0;
@@ -17,14 +17,13 @@ body {
 }
 
 .header-actions {
-    /* Contenedor para alinear los botones del encabezado (Órdenes y Logout) */
     display: flex; 
-    gap: 10px; /* Espacio entre los botones */
+    gap: 10px;
 }
 
-/* --- Nuevo estilo para el botón de Ver Órdenes en el encabezado --- */
+/* --- Estilos para el botón de Ver Órdenes en el encabezado --- */
 .btn-header {
-    background-color: #f1c40f; /* Amarillo o color de énfasis */
+    background-color: #f1c40f; 
     color: #333;
     padding: 8px 15px;
     text-decoration: none;
@@ -90,13 +89,15 @@ h2 {
     border-radius: 4px;
     font-size: 0.9em;
     transition: background-color 0.2s ease;
-    margin-right: 5px; /* Espacio entre botones */
+    margin-right: 5px;
     display: inline-block;
+    cursor: pointer; /* Añadido para el botón que abre el modal */
 }
 
-.btn-primary { /* Botón de Crear Producto */
-    background-color: #28a745; /* Verde */
+.btn-primary { 
+    background-color: #28a745; 
     color: white;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -104,7 +105,7 @@ h2 {
 }
 
 .btn-logout {
-    background-color: #e74c3c; /* Rojo oscuro */
+    background-color: #e74c3c; 
     color: white;
     padding: 8px 15px;
     text-decoration: none;
@@ -117,23 +118,96 @@ h2 {
 
 /* --- Botones CRUD Específicos --- */
 .crud-actions {
-    min-width: 180px; /* Asegura espacio para los 3 botones */
+    min-width: 180px;
 }
 
-.btn-read { /* VER */
-    background-color: #3498db; /* Azul */
+.btn-read { 
+    background-color: #3498db; 
     color: white;
 }
 .btn-read:hover { background-color: #2980b9; }
 
-.btn-update { /* EDITAR */
-    background-color: #f39c12; /* Naranja */
+.btn-update { 
+    background-color: #f39c12; 
     color: white;
 }
 .btn-update:hover { background-color: #e67e22; }
 
-.btn-delete { /* ELIMINAR */
-    background-color: #e74c3c; /* Rojo */
+.btn-delete { 
+    background-color: #e74c3c; 
     color: white;
 }
 .btn-delete:hover { background-color: #c0392b; }
+
+/* --- ESTILOS DEL MODAL (NUEVO) --- */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 25px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 500px; 
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+/* Estilos para los campos del formulario dentro del modal */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.btn-secondary {
+    background-color: #95a5a6; 
+    color: white;
+    border: none;
+    margin-right: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}

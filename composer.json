@@ -2,6 +2,6 @@
     "require":{
         "phpmailer/phpmailer": "^7.0.0",
         "vlucas/phpdotenv":"^5.0.0",
-        "omnipay/PayPal":"^3.0.0"
+        "omnipay/paypal":"^3.0.0"
     }
 }

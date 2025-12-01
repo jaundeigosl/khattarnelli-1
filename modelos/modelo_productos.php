@@ -7,20 +7,63 @@ function obtener_datos_productos() {
 
     try {
         $conexion = Database::getInstance(DB_CONFIG)->getConnection();
+
+        $datos = [];
+        $numero_productos = 15;
+
+        $query = "SELECT nombre, precio, descripcion,imagen FROM productos ORDER BY fecha DESC LIMIT ?";
+        $stmt = $conexion->prepare($query);
+        if( $stmt->execute([$numero_productos])){
+            $datos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        }
+        return $datos;
+
     } catch (\PDOException $e) {
-         throw new \PDOException($e->getMessage(), (int)$e->getCode());
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 
-    $datos = [];
-    
-    $stmt = $pdo->query("SELECT nombre, precio, descripcion,imagen FROM productos ORDER BY fecha DESC LIMIT 15");
-    $datos['ultimos_productos'] = $stmt->fetchAll();
-
-    return $datos;
 }
 
-function crear_producto($nombre, $precio, $descripcion, $imagen){}
+function crear_producto($nombre, $precio, $descripcion, $imagen){
 
-function actualizar_producto($nombre, $precio, $descripcion, $imagen){}
+    try {
+        $conexion = Database::getInstance(DB_CONFIG)->getConnection();
 
-function borrar_producto(){}
+        $query = "INSERT INTO productos (nombre, precio, descripcion, imagen) VALUES(?, ?, ?, ?);";
+        $stmt = $conexion->prepare($query);
+        $stmt->execute([$nombre, $precio, $descripcion, $imagen]);
+
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+
+}
+
+
+function actualizar_producto($id, $nombre, $precio, $descripcion, $imagen){
+    try {
+        $conexion = Database::getInstance(DB_CONFIG)->getConnection();
+
+        $query = "UPDATE productos nombre = ?, precio = ? , descripcion= ? , imagen = ? WHERE id = ?;";
+        $stmt = $conexion->prepare($query);
+        $stmt->execute([$nombre, $precio, $descripcion, $imagen]);
+
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+}
+
+function borrar_producto($id){
+
+    try {
+        $conexion = Database::getInstance(DB_CONFIG)->getConnection();
+
+        $query = "DELETE FROM productos WHERE id = ?;";
+        $stmt = $conexion->prepare($query);
+        $stmt->execute([$id]);
+
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    }
+
+}
