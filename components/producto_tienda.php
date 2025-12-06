@@ -16,7 +16,7 @@ $productos = obtener_datos_productos();
         <?php foreach ($productos as $p): ?>
             <div class="producto-card" style="border:1px solid #ccc; padding:15px; border-radius:8px;">
                 
-                <img src="<?php echo BASE_URL . $p['imagen']; ?>" 
+                <img src="/images/<?php echo $p['imagen']; ?>" 
                      alt="<?php echo $p['nombre']; ?>" 
                      style="width:100%; border-radius:5px;">
 

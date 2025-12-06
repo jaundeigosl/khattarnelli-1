@@ -21,8 +21,6 @@ if (!isset($_SESSION['user'])) {
         $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     }
     
-    header("Location: " . LOGIN_URL . "?error=not_logged_in");
-    exit();
 }
 
 if (isset($_SESSION['last_activity'])) {

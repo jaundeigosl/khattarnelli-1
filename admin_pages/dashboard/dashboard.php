@@ -1,6 +1,13 @@
-<?php include_once "../../paths.php";?>
+<?php
+require_once __DIR__ . "/../../paths.php";
+require_once __DIR__ . "/../../modelos/modelo_productos.php";
 
-<?php include_once "../../auth/middleware.php";?>
+$offset = (int) ($_GET['offset'] ?? 0); 
+$limit  = 15;
+
+$productos = obtener_datos_productos($offset, $limit);
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,24 +29,21 @@
 
     <div class="container">
         <?php 
-        // Lógica de manejo de mensajes (CORREGIDO)
         if (isset($_GET['status'])): 
             $status = htmlspecialchars($_GET['status']);
             $message = htmlspecialchars($_GET['message'] ?? '');
-            $action_performed = htmlspecialchars($_GET['action'] ?? '');
-            
-            if ($status === 'error'): 
         ?>
-            <p style="color: red; padding: 10px; background: #fdd; border: 1px solid #f00;">
-                ❌ Error en la acción <?php echo $action_performed; ?>: <?php echo $message; ?>
-            </p>
-        <?php elseif ($status === 'success'): ?>
-            <p style="color: green; padding: 10px; background: #dfd; border: 1px solid #0f0;">
-                ✅ Operación (<?php echo $action_performed; ?>) realizada con éxito.
-            </p>
-        <?php endif; 
-        endif; 
-        ?>
+            <?php if ($status === 'error'): ?>
+                <p style="color: red; padding: 10px; background: #fdd; border: 1px solid #f00;">
+                    ❌ Error: <?php echo $message; ?>
+                </p>
+            <?php elseif ($status === 'success'): ?>
+                <p style="color: green; padding: 10px; background: #dfd; border: 1px solid #0f0;">
+                    ✅ <?php echo $message; ?>
+                </p>
+            <?php endif; ?>
+        <?php endif; ?>
+
 
         <div class="dashboard-header">
             <h2>📦 Gestión de Productos</h2>

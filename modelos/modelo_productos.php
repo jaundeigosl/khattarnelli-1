@@ -1,7 +1,8 @@
 <?php
 
-include_once "../paths.php";
-include_once "../db/database.php";
+require_once __DIR__ . "/../paths.php";
+
+require_once __DIR__ . "../../db/database.php";
 
 function obtener_datos_productos($offset = 0, $limit = 50) {
 
@@ -81,4 +82,12 @@ function borrar_datos_producto($id){
     } catch (PDOException $e) {
         throw new PDOException("Error al borrar producto: " . $e->getMessage(), (int)$e->getCode());
     }
+
+}
+
+function obtener_producto_por_id($id) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM productos WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
