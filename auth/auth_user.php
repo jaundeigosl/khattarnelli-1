@@ -9,12 +9,11 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         if($usuario) {
             $_SESSION['user'] = $usuario;
             $_SESSION['user_id'] = $usuario['id'];
-            $_SESSION['user_role'] = $usuario['rol'] ?? 'user'; // Valor por defecto
+            $_SESSION['user_role'] = $usuario['rol'] ?? 'user';
             
             $_SESSION['login_time'] = time();
             
-            // SOLUCIÓN: Ruta corregida
-            header("Location: ../dashboard/dashboard.php");
+            header("Location: ../admin_pages/dashboard/dashboard.php");
             exit();
         } else {
             header("Location: ../login/login.php?error=1");
