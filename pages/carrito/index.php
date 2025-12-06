@@ -69,11 +69,14 @@ $economico_disponible = $shipping->envioEconomicoDisponible($cantidad_total);
 .shipping-title,
 .summary-title,
 .cart-table th,
-.cart-table td,
-.cart-table__name,
 .card-box label {
     color: #ffffff;
     font-weight: 300;
+}
+
+.cart-table__name,
+.cart-table td{
+    color: black;
 }
 
 /* Inputs */
@@ -256,7 +259,8 @@ $economico_disponible = $shipping->envioEconomicoDisponible($cantidad_total);
                              <?php $gran_total = 0; foreach ($_SESSION['carrito'] as $p): $subtotal = $p['precio'] * $p['cantidad']; $gran_total += $subtotal; ?> 
                              <tr> 
                                 <td class="cart-table__product">
-                                     <img src="<?= BASE_URL . $p['imagen']; ?>" class="cart-table__img">
+                                     <img src="<?php echo BASE_URL; ?>images/<?php echo $p['imagen']; ?>" class="cart-table__img">
+
                                       <span class="cart-table__name"><?= htmlspecialchars($p['nombre']); ?></span>
                                 </td> 
                                 <td>$<?= number_format($p['precio'],2); ?></td>

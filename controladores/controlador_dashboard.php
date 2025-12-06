@@ -1,6 +1,6 @@
 <?php
 include_once "../paths.php";
-include_once BASE_URL . "modelos/modelo_productos.php";
+include_once "../modelos/modelo_productos.php";
 
 $action = $_GET['action'] ?? 'view_dashboard';
 $offset = (int) ($_GET['offset'] ?? 0);      
@@ -22,7 +22,7 @@ switch ($action) {
             $message = $_GET['message'] ?? '';
             $action_performed = $_GET['action'] ?? '';
             
-            include_once BASE_URL . "admin_pages/dashboard/dashboard.php";
+            include_once "../admin_pages/dashboard/dashboard.php";
             
         } catch (Exception $e) {
             http_response_code(500);

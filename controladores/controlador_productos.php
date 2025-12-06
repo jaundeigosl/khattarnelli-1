@@ -1,11 +1,11 @@
 <?php
-include_once "../paths.php"; 
-include_once BASE_URL."modelos/modelo_productos.php";
+require_once "../paths.php"; 
+require_once "../modelos/modelo_productos.php";
 
 function manejar_subida_imagen() {
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === 0) {
         $nombre_archivo = basename($_FILES['imagen']['name']);
-        $ruta_destino = BASE_URL . 'imagenes/' . $nombre_archivo;
+        $ruta_destino = '../images/' . $nombre_archivo;
         
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_destino)) {
             return $nombre_archivo;
@@ -47,9 +47,15 @@ function actualizar_producto(){
     if (!empty($_POST['precio'])) $datos['precio'] = $_POST['precio'];
     if (!empty($_POST['descripcion'])) $datos['descripcion'] = $_POST['descripcion'];
     
-    if (!empty($_FILES['imagen']['name'])) {
-        $datos['imagen'] = manejar_subida_imagen();
-    }
+        // Si viene una imagen nueva, la subimos
+        if (!empty($_FILES['imagen']['name'])) {
+            $datos['imagen'] = manejar_subida_imagen();
+        } else {
+            // Si NO viene imagen, obtenemos la actual
+            $producto = obtener_producto_por_id($_POST['id']);
+            $datos['imagen'] = $producto['imagen'];
+        }
+
 
     if (empty($datos)) {
         throw new Exception("No hay datos para actualizar.");
@@ -107,14 +113,16 @@ if ($metodo === "POST") {
                 throw new Exception("Acción no válida o faltante.");
         }
         
-        header('Location: ' . BASE_URL . 'controladores/controlador_dashboard.php?action=view_dashboard&status=success&message=' . urlencode($message));
-        exit;
+        header('Location: ' . BASE_URL . 'admin_pages/dashboard/dashboard.php?status=success&message=' . urlencode($message));
+            exit;
+
         
     } catch (Exception $e) {
         $error_code = ($e->getCode() !== 0) ? $e->getCode() : 500;
         http_response_code($error_code);
-        header('Location: ' . BASE_URL . 'controladores/controlador_dashboard.php?action=view_dashboard&status=error&message=' . urlencode($e->getMessage()));
-        exit;
+            header('Location: ' . BASE_URL . 'admin_pages/dashboard/dashboard.php?status=success&message=' . urlencode($message));
+            exit;
+
     }
 
 } else {
