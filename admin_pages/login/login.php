@@ -1,5 +1,11 @@
+<?php
+session_start();
 
-
+if(isset($_SESSION['user'])) {
+    header("Location: ../dashboard/dashboard.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,23 +19,26 @@
     <div class="login-container">
         <h2>Panel de Administración</h2>
         <img src="../../images/logo/ChatGPT Image 19 nov 2025, 13_26_41.png" class="logo">
-        <form action="verificar_login.php" method="POST" class="login-form">
+        
+        <form action="../../auth/auth_user.php" method="POST" class="login-form">
             
             <div class="form-group">
-                <label for="nombre">Nombre de Usuario:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" required 
+                       value="<?php echo isset($_GET['username']) ? htmlspecialchars($_GET['username']) : ''; ?>">
             </div>
             
             <div class="form-group">
-                <label for="passw">Contraseña:</label>
-                <input type="password" id="passw" name="passw" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
             </div>
             
             <button type="submit" class="btn-login">Iniciar Sesión</button>
             
             <?php 
-                // Asegúrate de incluir esto en tu archivo PHP real
-                // if (isset($_GET['error'])) { echo '<p class="error-message">Credenciales incorrectas.</p>'; }
+                if (isset($_GET['error'])) { 
+                    echo '<p class="error-message">Credenciales incorrectas.</p>'; 
+                }
             ?>
         </form>
     </div>

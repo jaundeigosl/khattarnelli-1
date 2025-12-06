@@ -1,7 +1,11 @@
+<?php include_once "../../auth/middleware.php";?>
+
 <?php
 require_once "../../modelos/modelo_pedidos.php";
+
 $pedidos = obtener_datos_pedidos();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

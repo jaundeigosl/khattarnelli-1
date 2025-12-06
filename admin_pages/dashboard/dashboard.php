@@ -1,5 +1,7 @@
 <?php include_once "../../paths.php";?>
 
+<?php include_once "../../auth/middleware.php";?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +16,7 @@
         <h1>Panel de Administración</h1>
         <div class="header-actions">
             <a href="../pedidos/pedidos.php" class="btn-header">Ver Órdenes</a>
-            <a href="logout.php" class="btn-logout">Cerrar Sesión</a>
+            <a href="../../auth/logout.php" class="btn-logout">Cerrar Sesión</a>
         </div>
     </header>
 

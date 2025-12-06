@@ -1,9 +1,7 @@
 CREATE DATABASE IF NOT EXISTS khattarnelli_db;
 USE khattarnelli_db;
 
----------------------------------------------------------
 -- Tabla: productos
----------------------------------------------------------
 DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -21,9 +19,7 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `descripcion`, `imagen`, `cre
 (1, 'Chocolate Premium Khatarnelli 70% Cacao', 5.99, 'Chocolate artesanal 70% cacao en barra de 120g.', 'images/productos/chocolate70.png', '2025-12-01 16:44:21', '2025-12-01 16:44:21');
 
 
----------------------------------------------------------
 -- Tabla: pedidos
----------------------------------------------------------
 DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE `pedidos` (
   `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -50,9 +46,7 @@ INSERT INTO `pedidos` VALUES
 (1,'juan',100.980000,89.00,'economico','{\"1\":{\"id\":1,\"nombre\":\"Chocolate Premium Khatarnelli 70% Cacao\",\"precio\":5.99,\"imagen\":\"images\\/productos\\/chocolate70.png\",\"cantidad\":2}}','calle 72 #38','test@test.com','3152556478','paypal','completado','2025-12-03 15:54:36','2025-12-03 20:54:36','2025-12-03 20:54:36','PAYID-NEYKG3A5020964310825600U','paypal');
 
 
----------------------------------------------------------
 -- Tabla: detalle_pedido
----------------------------------------------------------
 DROP TABLE IF EXISTS `detalle_pedido`;
 CREATE TABLE `detalle_pedido` (
   `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -69,9 +63,7 @@ CREATE TABLE `detalle_pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
----------------------------------------------------------
 -- Tabla: usuarios
----------------------------------------------------------
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
