@@ -11,7 +11,7 @@
     <header class="header">
         <h1>Panel de Administración</h1>
         <div class="header-actions">
-            <a href="ordenes.php" class="btn-header">Ver Órdenes</a>
+            <a href="../pedidos/pedidos.php" class="btn-header">Ver Órdenes</a>
             <a href="logout.php" class="btn-logout">Cerrar Sesión</a>
         </div>
     </header>

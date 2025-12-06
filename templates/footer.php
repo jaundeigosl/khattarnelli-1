@@ -6,7 +6,7 @@
                     <div class="footer-logo">
                         <img src="<?php echo BASE_URL; ?>images/logo/ChatGPT Image 19 nov 2025, 13_26_41.png" alt="footer Kattarnelly logo">
                     </div>
-                    <p>Mezclas de café y té con especias ayurvédicas para tu bienestar integral.</p>
+                    <p>Descubre el sabor que despierta tus sentidos</p>
                 </div>
                 
                 <div class="footer-links">
@@ -35,15 +35,15 @@
                             <path d="M22 8L12 14L2 8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M2 8V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H20C20.5304 2 21.0391 2.21071 21.4142 2.58579C21.7893 2.96086 22 3.46957 22 4V8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>khattarnelli@gmail.com</span>
+                        <a href="mailto:khattarnelli@gmail.com" target="_blank"><span>khattarnelli@gmail.com</span></a>
                     </div>
                     <div class="contact-item">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 0c-2.761 0-5 2.239-5 5 0 5 5 11 5 11s5-6 5-11c0-2.761-2.239-5-5-5zM8 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path></svg>
-                        <span>Remolino 210, Col. Garita de Jalisco, CP. 78294, San Luis Potosí, SLP. México</span>
+                       <a href="https://maps.app.goo.gl/wEMRwKrGF3UMVWD97" target=_blank><span>Remolino 210, Col. Garita de Jalisco, CP. 78294, San Luis Potosí, SLP. México</span></a>
                     </div>
                     <div class="contact-item">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11 10c-1 1-1 2-2 2s-2-1-3-2-2-2-2-3 1-1 2-2-2-4-3-4-3 3-3 3c0 2 2.055 6.055 4 8s6 4 8 4c0 0 3-2 3-3s-3-4-4-3z"></path></svg>
-                        <span>+52 444 845 5155</span>
+                        <a href="https://wa.me/524448455155" target=_blank><span>+52 444 845 5155</span></a>
                     </div>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/1UsZz8mjwJ/?mibextid=wwXIfr" class="social-link" target="_blank">

@@ -1,6 +1,6 @@
 <?php
 
-include_once "config.php";
+include_once "../paths.php";
 
 $host = $db_config['db']['host'];
 $user = $db_config['db']['user'];

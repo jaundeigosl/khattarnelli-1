@@ -57,7 +57,7 @@
             <article class="terms-section-block contact-block">
                 <h3>Contacto</h3>
                 <p>
-                    Si tiene alguna pregunta, llámenos al <strong>(+52) 444 8455155</strong>, envíenos un correo electrónico a <a href="mailto:khattarnelli@gmail.com">khattarnelli@gmail.com</a> o póngase en contacto con nosotros en Remolino 210, Colonia Garita de Jalisco, CP. 78294, San Luis Potosí, San Luis Potosí, México.
+                    Si tiene alguna pregunta, llámenos al <strong>(+52) 444 8455155</strong> o envíenos un correo electrónico a <a href="mailto:khattarnelli@gmail.com">khattarnelli@gmail.com</a>
                 </p>
             </article>
 

@@ -13,7 +13,7 @@
 
 /* Promesa de la Marca H4 */
 #nosotros .product-features h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
@@ -89,4 +89,8 @@
 #last-message{
     color:var(--primary-color);
     font-weight: 600;
+}
+
+.about-details-box strong{
+    color:var(--primary-color);
 }

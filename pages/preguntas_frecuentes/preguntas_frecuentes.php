@@ -68,7 +68,7 @@
                 <summary>¿Qué pasa si mi envió se pierde?</summary>
                 <div class="faq-answer">
                     <p>En caso de que sea necesario repondremos tu compra, solo revisaremos previamente con la compañía de mensajería, la revisión tomará 24-48 horas.</p>
-                    <p>Contáctanos a través de nuestras redes sociales, o manda un correo a <a href="mailto:kattarnelli@gmail.com">kattarnelli@gmail.com</a> o al WhatsApp <a href="https://wa.me/524448455155">(+52) 444 8455155</a></p>
+                    <p>Contáctanos a través de nuestras redes sociales, o manda un correo a <a href="mailto:khattarnelli@gmail.com">khattarnelli@gmail.com</a> o al WhatsApp <a href="https://wa.me/524448455155">(+52) 444 8455155</a></p>
                 </div>
             </details>
             

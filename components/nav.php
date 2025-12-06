@@ -6,10 +6,12 @@ function isActive($link_path, $current_uri) {
         return "active";
     }
 
-    return '';
+    return '';  
 }
 
-// **Nota:** Asume que la constante BASE_URL ya está definida.
+include_once __DIR__ . "/../controladores/carritoController.php"; 
+$items = obtener_total_carrito(); 
+
 
 ?>
 
@@ -37,7 +39,13 @@ function isActive($link_path, $current_uri) {
 
                 <?php $contacto_link = BASE_URL . 'pages/contacto/contacto.php' ?>
                 <li><a href="<?php echo $contacto_link; ?>" class="<?php echo isActive($contacto_link, $actual_uri); ?>">Contacto</a></li>
+            <li>
+                <a href="<?php echo BASE_URL; ?>pages/carrito/index.php" style="font-size:20px;">
+                    🛒 (<?php echo $items; ?>)
+                </a>
+            </li>    
             </ul>
+            
             </nav>
     </div>
 </header>
