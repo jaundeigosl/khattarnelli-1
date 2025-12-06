@@ -1,3 +1,5 @@
+<?php include_once "../../paths.php";?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,11 +19,25 @@
     </header>
 
     <div class="container">
-        <?php if (isset($error_message)): ?>
-            <p style="color: red; padding: 10px; background: #fdd; border: 1px solid #f00;"><?php echo htmlspecialchars($error_message); ?></p>
-        <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'success'): ?>
-            <p style="color: green; padding: 10px; background: #dfd; border: 1px solid #0f0;">Producto creado exitosamente.</p>
-        <?php endif; ?>
+        <?php 
+        // Lógica de manejo de mensajes (CORREGIDO)
+        if (isset($_GET['status'])): 
+            $status = htmlspecialchars($_GET['status']);
+            $message = htmlspecialchars($_GET['message'] ?? '');
+            $action_performed = htmlspecialchars($_GET['action'] ?? '');
+            
+            if ($status === 'error'): 
+        ?>
+            <p style="color: red; padding: 10px; background: #fdd; border: 1px solid #f00;">
+                ❌ Error en la acción <?php echo $action_performed; ?>: <?php echo $message; ?>
+            </p>
+        <?php elseif ($status === 'success'): ?>
+            <p style="color: green; padding: 10px; background: #dfd; border: 1px solid #0f0;">
+                ✅ Operación (<?php echo $action_performed; ?>) realizada con éxito.
+            </p>
+        <?php endif; 
+        endif; 
+        ?>
 
         <div class="dashboard-header">
             <h2>📦 Gestión de Productos</h2>
@@ -42,9 +58,25 @@
             <?php 
                 if (!empty($productos)): 
                     foreach ($productos as $producto): 
-
-                        include BASE_URL . "components/producto_dashboard.php";
-
+                        // Uso de data-atributos para JS
+                        $data_attrs = "data-id='{$producto['id']}' data-nombre='{$producto['nombre']}' data-precio='{$producto['precio']}' data-descripcion='{$producto['descripcion']}'";
+                ?>
+                    <tr <?php echo $data_attrs; ?>>
+                        <td><?php echo htmlspecialchars($producto['id']); ?></td>
+                        <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
+                        <td>$<?php echo htmlspecialchars($producto['precio']); ?></td>
+                        <td><?php echo htmlspecialchars(substr($producto['descripcion'], 0, 50)) . '...'; ?></td>
+                        <td>
+                            <button class="btn btn-info edit-btn" data-id="<?php echo $producto['id']; ?>">✏️ Editar</button>
+                            
+                            <form action="<?php echo BASE_URL . 'controladores/controlador_productos.php'; ?>" method="POST" style="display: inline;" onsubmit="return confirm('¿Confirma que desea borrar el producto ID: <?php echo $producto['id']; ?>?');">
+                                <input type="hidden" name="action" value="delete">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($producto['id']); ?>">
+                                <button type="submit" class="btn btn-danger">🗑️ Borrar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php 
                     endforeach;
                 else: 
                 ?>
@@ -54,17 +86,16 @@
             <?php endif; ?>
             </tbody>
         </table>
-    </div>
+        
+        </div>
 
     <div id="crear-producto-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h3>Crear Nuevo Producto</h3>
             
-            <form action="dashboard_controller.php" method="POST" enctype="multipart/form-data"> 
-                <input type="hidden" name="action" value="crear_producto">
-                
-                <div class="form-group">
+            <form action="<?php echo BASE_URL . 'controladores/controlador_productos.php'; ?>" method="POST" enctype="multipart/form-data"> 
+                <input type="hidden" name="action" value="create"> <div class="form-group">
                     <label for="nombre">Nombre del Producto:</label>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
@@ -86,6 +117,42 @@
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="button" class="btn btn-secondary" id="cancelar-modal-btn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="editar-producto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn-edit">&times;</span>
+            <h3>Editar Producto: <span id="producto-nombre-edit"></span></h3>
+            
+            <form action="<?php echo BASE_URL . 'controladores/controlador_productos.php'; ?>" method="POST" enctype="multipart/form-data"> 
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="id" id="edit-id">
+                
+                <div class="form-group">
+                    <label for="edit-nombre">Nombre del Producto:</label>
+                    <input type="text" id="edit-nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-precio">Precio:</label>
+                    <input type="number" id="edit-precio" name="precio" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-descripcion">Descripción:</label>
+                    <textarea id="edit-descripcion" name="descripcion" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-imagen">Imagen del Producto (Cambiar):</label>
+                    <input type="file" id="edit-imagen" name="imagen" accept="image/*">
+                    <small>Deja vacío para conservar la imagen actual.</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="button" class="btn btn-secondary" id="cancelar-edit-btn">Cancelar</button>
             </form>
         </div>
     </div>
